@@ -103,6 +103,18 @@ the **same** even with inline stuff
             "<div><pre><code>This is text that _should_ remain\nthe **same** even with inline stuff\n</code></pre></div>",
         )
 
+    def test_unordered_list_links(self):
+        md = """
+- [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
+- [Why Tom Bombadil Was a Mistake](/blog/tom)
+"""
+        node = markdown_to_html_node(md)
+        html = node.to_html()
+        self.assertEqual(
+            html,
+            '<div><ul><li><a href="/blog/glorfindel">Why Glorfindel is More Impressive than Legolas</a></li><li><a href="/blog/tom">Why Tom Bombadil Was a Mistake</a></li></ul></div>',
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

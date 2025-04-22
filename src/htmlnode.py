@@ -58,6 +58,9 @@ class ParentNode(HTMLNode):
             raise ValueError("missing children")
         html_children = ""
         for child in self.children:
+            if child.value is None and type(child) is LeafNode:
+                print(child)
+
             html_children += child.to_html()
         return f"<{self.tag}{self.props_to_html()}>{html_children}</{self.tag}>"
 
