@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    recursive_copy("./static", "./public")
+    recursive_copy("./static", "./docs")
     base_path = "/" if len(sys.argv) == 1 else sys.argv[1]
     print(base_path)
     generate_pages_recursive("./content", "./template.html", "./docs", base_path)
