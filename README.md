@@ -1,5 +1,7 @@
 # Static Site Generator
 
+https://ralphbibera.github.io/static-site-generator/
+
 Site generator that generates static HTML files from Markdown files. Deployed on GitHub Pages.
 
 ## Usage
